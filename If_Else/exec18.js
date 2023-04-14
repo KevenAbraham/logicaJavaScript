@@ -1,97 +1,56 @@
-let valor = parseFloat(prompt("Notas disponíveis para saque: [1, 5, 10, 50, 100]\nInsira o valor a ser sacado: R$"));
+let saque = parseFloat(prompt("Informe o valor para saque: R$"));
 
-if (valor >= 100.0) {
-    centena = valor / 100;
-    dezena = (valor % 100) / 10;
-    unidade = (valor % 100) % 10;
+if (saque < 10.0) {
+    document.write("<center>O valor precisa ser maior que R$10,00");
+} else if (saque > 600.0) {
+    document.write("<center>O valor precisa ser menor que R$600,00");
+} else {
+    let notas100 = 0;
+    let notas50 = 0;
+    let notas10 = 0;
+    let notas5 = 0;
+    let notas1 = 0;
 
-    
+    while (saque >= 100) {
+        notas100++;
+        saque -= 100;
+    }
+
+    while (saque >= 50) {
+        notas50++;
+        saque -= 50;
+    }
+
+    while (saque >= 10) {
+        notas10++;
+        saque -= 10;
+    }
+
+    while (saque >= 5) {
+        notas5++;
+        saque -= 5;
+    }
+
+    while (saque >= 1) {
+        notas1++;
+        saque -= 1;
+    }
+
+    document.write("<center>Para sacar a quantidade desejada, estas notas estão disponíveis:<br><br>");
+
+    if (notas100 > 0) {
+        document.write("<center>" + notas100 + " nota(s) de R$100<br>");
+    }
+    if (notas50 > 0) {
+        document.write("<center>" + notas50 + " nota(s) de R$50<br>");
+    }
+    if (notas10 > 0) {
+        document.write("<center>" + notas10 + " nota(s) de R$10<br>");
+    }
+    if (notas5 > 0) {
+        document.write("<center>" + notas5 + " nota(s) de R$5<br>");
+    }
+    if (notas1 > 0) {
+        document.write("<center>" + notas1 + " nota(s) de R$1<br>");
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// if (valor >= 100.0) {
-//     //caso o valor seja maior ou igual a 100 (tenha centena)
-//     centena = Math.floor(valor / 100); // a centena (qtd de notas de 100)
-//     dezena = Math.floor((valor % 100) / 10); 
-//     unidade = (num % 100) % 10;
-
-//     if (dezena >= 50) { //caso precise de uma nota de 50
-//         if (unidade <= 4) { //nao usarei nota de 5
-//             document.write("<center>Imprimindo cédulas:<br>Cédula(s) de R$100,00: " + centena + "<br>Cédula de R$50,00 = 1<br>Cédula(s) de R$10,00: " + (centena % dezena) + "<br>Notas de R$1,00: " + unidade);
-//         } else { //usarei uma nota de 5
-//             document.write("<center>Imprimindo cédulas:<br>Cédula(s) de R$100,00: " + centena + "<br>Cédula de R$50,00 = 1<br>Cédula(s) de R$10,00: " + (centena % dezena) + "<br>Notas de R$5,00: 1" +  "<br>Notas de R$1,00: " + unidade);
-//         }    
-//     } else {
-//         // caso nao precise de uma nota de 50
-//         if (unidade <= 4) {
-//             //nao usarei nota de 5
-//             document.write("<center>Imprimindo cédulas:<br>Cédula(s) de R$100,00: " + centena + "<br>Cédula(s) de R$10,00: " + (centena % dezena) + "<br>Notas de R$1,00: " + unidade);
-//         } else {
-//             //usarei nota de 5
-//             document.write("<center>Imprimindo cédulas:<br>Cédula(s) de R$100,00: " + centena + "<br>Cédula(s) de R$10,00: " + (centena % dezena) + "<br>Cédula de R$5,00: 1<br>Notas de R$1,00: " + unidade);
-//         }       
-//     }
-// } else {
-//     //caso o valor seja menor ou igual a 99 (nao tenha centena)
-//     dezena = Math.floor((valor % 100) / 10); 
-//     unidade = (num % 100) % 10;
-
-//     if (dezena >= 50) {
-//         //caso precise de uma nota de 50
-//         if (unidade <= 4) {
-//             //nao usarei nota de 5
-//             document.write("<center>Imprimindo cédulas:<br>Cédula de R$50,00 = 1<br>Cédula(s) de R$10,00: " + (centena % dezena) + "<br>Notas de R$1,00: " + unidade);
-//         } else {
-//             //usarei uma nota de 5
-//             document.write("<center>Imprimindo cédulas:<br>Cédula(s) de R$100,00: " + centena + "<br>Cédula de R$50,00 = 1<br>Cédula(s) de R$10,00: " + (centena % dezena) + "<br>Notas de R$5,00: 1" +  "<br>Notas de R$1,00: " + unidade);
-//         }  
-          
-//     } else {
-//         // caso nao precise de uma nota de 50
-//         if (unidade <= 4) {
-//             //nao usarei nota de 5
-//             document.write("<center>Imprimindo cédulas:<br>Cédula(s) de R$100,00: " + centena + "<br>Cédula(s) de R$10,00: " + (centena % dezena) + "<br>Notas de R$1,00: " + unidade);
-//         } else {
-//             //usarei nota de 5
-//             document.write("<center>Imprimindo cédulas:<br>Cédula(s) de R$100,00: " + centena + "<br>Cédula(s) de R$10,00: " + (centena % dezena) + "<br>Cédula de R$5,00: 1<br>Notas de R$1,00: " + unidade);
-//         }       
-//     }
-// } 
