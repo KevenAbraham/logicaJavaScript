@@ -1,5 +1,13 @@
-let num = parseInt(prompt("Informe um numero:"));
+nota = -1;20
 
-for(i=0; i<=num; i++) {
-    document.write(`<center>O número é: ${i}`); 
+while (nota < 0 || nota > 10) {
+    let res = parseFloat(prompt("Informe a nota: "));
+    nota = res;
+
+    if (nota < 0 || nota > 10) {
+        alert("A nota não confere. Por favor, tente de novo!");
+        location.reload();
+    }
 }
+
+document.write(`<center>A nota do aluno é: ${nota}`);
