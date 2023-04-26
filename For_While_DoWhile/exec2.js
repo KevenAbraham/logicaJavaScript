@@ -10,4 +10,4 @@ while (senha == nome) {
     }
 }
 
-document.write(`Olá ${nome}, seja bem-vindo(a)!`);
+document.write(`<center>Olá <b>${nome}</b>, seja bem-vindo(a)!`);
