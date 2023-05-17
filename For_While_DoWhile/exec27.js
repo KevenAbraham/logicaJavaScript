@@ -13,4 +13,4 @@ for (i = 1; i <= numTurmas; i++) {
 
 let media = Alunos / Turmas;
 
-document.write(`Número médio de alunos por turma: ${media}`);
+document.write(`<center>Número médio de alunos por turma: ${media}`);
